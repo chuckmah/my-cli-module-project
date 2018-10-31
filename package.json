@@ -1,6 +1,7 @@
 {
   "name": "my-cli-modul-project",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "author": "Charles Maheu <charles.maheu@dti.ulaval.ca>",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,9 +10,11 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@ulaval/modul-components": "file:../../../git/modul-components/ulaval-modul-components-1.0.0-beta.64.tgz",
     "vue": "^2.5.17",
     "vue-class-component": "^6.0.0",
-    "vue-property-decorator": "^7.0.0"
+    "vue-property-decorator": "^7.0.0",
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "@types/jest": "^23.1.4",
@@ -23,9 +26,12 @@
     "babel-core": "7.0.0-bridge.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
+    "source-map-loader": "^0.2.4",
+    "svg-inline-loader": "^0.8.0",
     "ts-jest": "^23.0.0",
     "typescript": "^3.0.0",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "vue-template-loader": "^1.0.0"
   },
   "postcss": {
     "plugins": {

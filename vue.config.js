@@ -1,12 +1,11 @@
 module.exports = {
     chainWebpack: config => {
-
-    config.module.rules.delete("svg");
+        config.module.rules.delete("svg");
+        config.module.rules.delete("scss");
     },
     configureWebpack: {
         module: {
-            rules: [
-                {
+            rules: [{
                     test: /\.js$/,
                     use: ["source-map-loader"],
                     enforce: "pre"
@@ -15,16 +14,39 @@ module.exports = {
                     enforce: 'pre',
                     test: /\.scss$/,
                     loader: "sass-loader",
-                    exclude: [/src/],
                     options: {
                         sourceMap: true,
                         includePaths: ["./node_modules/@ulaval/modul-components/dist/styles"]
                     }
                 },
                 {
+                    enforce: 'post',
+                    test: /\.scss$/,
+                    use: ['style-loader',
+                        'css-loader',
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                sourceMap: true,
+                                plugins: function () {
+                                    return [
+                                        require('autoprefixer')
+                                    ];
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
                     test: /.html$/,
                     loader: "vue-template-loader",
-                    include: [/node_modules/],
+                    include: [
+                        /node_modules/,
+                        /src/
+                    ],
+                    options: {
+                        scoped: true
+                    }
                 },
                 {
                     test: /\.svg$/,

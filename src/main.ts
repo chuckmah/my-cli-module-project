@@ -7,7 +7,7 @@ Vue.config.productionTip = false;
 
 Vue.use(UtilsPlugin,
     {
-        propagateVueParserErrors: true, i18PluginOptions: { curLang: FRENCH },
+        propagateVueParserErrors: true, i18PluginOptions: { curLang: FRENCH }
     }); // propagateVueError to console and use french
 Vue.use(ComponentsPlugin, { richTextOptions: { key: 'froela_liscence_key' } }); // Use fake key to avoid error
 Vue.use(DirectivesPlugin);
@@ -16,7 +16,7 @@ Vue.use(FrenchPlugin);
 Vue.use(DefaultSpritesPlugin);
 
 const vue = new Vue({
-    render: (h) => h(App),
+    render: (h) => h(App)
 });
 
 vue.$mount('#app');

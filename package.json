@@ -29,11 +29,12 @@
         "style-loader": "^0.23.1",
         "svg-inline-loader": "^0.8.0",
         "ts-jest": "^23.0.0",
+        "tslint-config-standard": "^8.0.1",
         "typescript": "^3.0.0",
-        "vue-template-compiler": "^2.5.17",
-        "vue-template-loader": "^1.0.0",
         "vue-class-component": "^6.0.0",
-        "vue-property-decorator": "^7.0.0"
+        "vue-property-decorator": "^7.0.0",
+        "vue-template-compiler": "^2.5.17",
+        "vue-template-loader": "^1.0.0"
     },
     "postcss": {
         "plugins": {

@@ -1,9 +1,17 @@
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+
 module.exports = {
     chainWebpack: config => {
         config.module.rules.delete("svg");
         config.module.rules.delete("scss");
     },
     configureWebpack: {
+        plugins: [
+            new StyleLintPlugin({
+                configFile: '.stylelintrc',
+                emitErrors: true
+            }),
+        ],
         module: {
             rules: [{
                     test: /\.js$/,
@@ -57,8 +65,19 @@ module.exports = {
                         removeSVGTagAttrs: true
                     }
                 },
+                {
+                    test: /\.ts$/,
+                    enforce: 'pre',
+                    loader: 'tslint-loader',
+                    include: [/src/],
+                    options: {
+                        configFile: 'tslint.json',
+                        formatter: 'grouped',
+                        formattersDirectory: 'node_modules/custom-tslint-formatters/formatters',
+                        emitErrors: true
+                    }
+                }
             ]
-        }
-
+        },
     }
 }

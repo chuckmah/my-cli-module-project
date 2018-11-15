@@ -1,10 +1,13 @@
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
+    lintOnSave: false,
+
     chainWebpack: config => {
         config.module.rules.delete("svg");
         config.module.rules.delete("scss");
     },
+
     configureWebpack: {
         plugins: [
             new StyleLintPlugin({
@@ -79,5 +82,13 @@ module.exports = {
                 }
             ]
         },
-    }
-}
+    },
+
+    baseUrl: undefined,
+    outputDir: undefined,
+    assetsDir: undefined,
+    runtimeCompiler: undefined,
+    productionSourceMap: false,
+    parallel: undefined,
+    css: undefined
+};

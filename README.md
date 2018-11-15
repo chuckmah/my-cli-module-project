@@ -17,7 +17,7 @@ npm run build
 
 ### Run your tests
 ```
-npm run test
+npm run test:unit
 ```
 
 ### Lints and fixes files
@@ -25,7 +25,7 @@ npm run test
 npm run lint
 ```
 
-### Run your unit tests
+### Use vue-cli ui
 ```
-npm run test:unit
+npm run ui
 ```

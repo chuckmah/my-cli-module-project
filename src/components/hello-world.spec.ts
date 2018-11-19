@@ -19,7 +19,7 @@ describe('HelloWord', () => {
             }
         });
 
-        return expect(rdo.element).toMatchSnapshot();
+        return expect(rdo.html()).toMatchSnapshot();
 
     });
 

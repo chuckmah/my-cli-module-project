@@ -11,7 +11,7 @@
         "ui": "vue ui"
     },
     "dependencies": {
-        "@ulaval/modul-components": "file:../../../git/modul-components/ulaval-modul-components-1.0.0-beta.67.tgz",
+        "@ulaval/modul-components": "^1.0.0-beta.69",
         "vue": "^2.5.17",
         "vue-router": "^3.0.1",
         "vuex": "^3.0.1"
